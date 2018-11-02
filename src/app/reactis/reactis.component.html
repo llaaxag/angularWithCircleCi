@@ -1,0 +1,28 @@
+<div class="container">
+  <div>
+    <i [ngClass]="faklasser"></i>
+  </div>
+  <form [formGroup]="reactisForm" (ngSubmit)="onSubmit()" action="">
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input id="id" class="form-control" type="text" formControlName="id">
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" class="form-control" type="text" formControlName="name">
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+  <button class="btn" (click)="getUsersAndLog()">Hämta användare och logga</button>
+  <button (click)="ajaxmergemap()">ajax and mergemap</button>
+  <button (click)="ajaxmap()">Ajax and map</button>
+  <button (click)="startaBatteri()">Starta batteri</button>
+  <button (click)="stoppaBatteri()">Stoppa batteri</button>
+  <div>
+    <button (click)="progressWithAngularZone()">Starta progress in Zone</button>
+    <button (click)="progressOutsideAngularZone()">Starta progress outside Zone</button>
+  </div>
+  <div>
+    {{reactisForm.value | json}}
+  </div>
+</div>
